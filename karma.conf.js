@@ -15,7 +15,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'src/*.coffee',
-      'spec/*_spec.js'
+      'spec/*_spec.coffee'
     ],
 
 
@@ -28,8 +28,9 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-    'src/*.coffee': ['coffee'],
-    'src/*.coffee' : ['coverage']
+      'src/*.coffee': ['coffee'],
+      'spec/*_spec.coffee': ['coffee'],
+      'src/*.coffee' : ['coverage']
     },
 
 //    coffeePreprocessor: {
