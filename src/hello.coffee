@@ -1,0 +1,2 @@
+hello = (name)->
+    "Hi #{name}!"

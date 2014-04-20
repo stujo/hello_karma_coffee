@@ -7,7 +7,6 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine'],
@@ -15,7 +14,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'lib/*.js',
+      'src/*.coffee',
       'spec/*_spec.js'
     ],
 
@@ -29,8 +28,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'lib/*.js' : 'coverage'
+    'src/*.coffee': ['coffee'],
+    'src/*.coffee' : ['coverage']
     },
+
+//    coffeePreprocessor: {
+//      // options passed to the coffee compiler
+//      options: {
+//          bare: true,
+//          sourceMap: true
+//      },
+//      // transforming the filenames
+//      transformPath: function(path) {
+//          return path.replace(/^coffee/, 'lib').replace(/\.coffee$/, '.js');
+//      }
+//    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
